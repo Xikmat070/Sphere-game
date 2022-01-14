@@ -20,6 +20,9 @@ public class SaveCoins : MonoBehaviour
     private int playercoins;
     [SerializeField]
     private Text playerscoretext;
+    [SerializeField]
+    private AudioSource coinAudio;
+    
 
     private void Awake()
     {
@@ -32,6 +35,8 @@ public class SaveCoins : MonoBehaviour
     }
 
     
+
+
     private void Update()
     {
         if (PlayerPrefs.HasKey("coins"))
@@ -57,11 +62,12 @@ public class SaveCoins : MonoBehaviour
     {
         if (other.gameObject.tag == "money")
         {
+            coinAudio.Play();
             coins++;
             other.gameObject.SetActive(false);
             textcoins.text = coins.ToString();
             PlayerPrefs.SetInt("coins", coins);
-
+            
         }
         
 
@@ -91,6 +97,8 @@ public class SaveCoins : MonoBehaviour
         PlayerPrefs.SetInt("SaveScore", bestcoin);
 
         scoreee.score = bestcoin;
+
+        
     }
     
     
