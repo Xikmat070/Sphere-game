@@ -24,7 +24,7 @@ public class DestroyPlayer : MonoBehaviour
         
         if (other.gameObject.tag == "Cube")
         {
-            
+            AudioDestroy.Play();
             playercoins.PlayerCoins();
     
             PlayerPrefs.SetInt("coins", 0);
@@ -38,7 +38,7 @@ public class DestroyPlayer : MonoBehaviour
             
 
             Destroy(gameObject);
-            AudioDestroy.Play();
+            
         }
     
     }

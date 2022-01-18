@@ -13,6 +13,23 @@ public class MainMenu : MonoBehaviour
     public Text nameText;
     [SerializeField]
     private Text inputText;
+    int levelUnLock;
+    public Button[] buttons;
+
+    void Start()
+    {
+        levelUnLock = PlayerPrefs.GetInt("levels", 1);
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
+
+        for (int i = 0; i < levelUnLock; i++)
+        {
+            buttons[i].interactable = true;
+        }
+    }
 
 
     private void Update()
