@@ -22,6 +22,11 @@ public class SaveCoins : MonoBehaviour
     private Text playerscoretext;
     [SerializeField]
     private AudioSource coinAudio;
+    private UnityEngine.Object coinexplosion;
+
+
+
+
     
 
     private void Awake()
@@ -34,8 +39,11 @@ public class SaveCoins : MonoBehaviour
         
     }
 
-    
 
+    private void Start()
+    {
+        coinexplosion = Resources.Load("CoinParticle");
+    }
 
     private void Update()
     {
@@ -64,9 +72,15 @@ public class SaveCoins : MonoBehaviour
         {
             coinAudio.Play();
             coins++;
+
+            GameObject explosionC = (GameObject)Instantiate(coinexplosion);
+            explosionC.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            
             other.gameObject.SetActive(false);
             textcoins.text = coins.ToString();
             PlayerPrefs.SetInt("coins", coins);
+
+
             
         }
         
