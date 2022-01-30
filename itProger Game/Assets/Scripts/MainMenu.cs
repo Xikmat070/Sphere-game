@@ -10,11 +10,13 @@ public class MainMenu : MonoBehaviour
     private string playerName;
     [SerializeField]
     private string saveName;
-    public Text nameText;
+    [SerializeField]
+    private Text nameText;
     [SerializeField]
     private Text inputText;
-    int levelUnLock;
-    public Button[] buttons;
+    private int levelUnLock;
+    [SerializeField]
+    private Button[] buttons;
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class MainMenu : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+
+        //PlayerPrefs.DeleteKey("levels");
     }
 
 
@@ -49,4 +53,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(LevelNumber);
     }
+
+    
 }

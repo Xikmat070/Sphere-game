@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class SaveName : MonoBehaviour
 {
-    
-    public string playerName;
-    
-    public Text textName;
-    public PlayerData nameee;
+    [SerializeField]
+    private string playerName;
+    [SerializeField]
+    private Text textName;
+    /*public PlayerData nameee;*/
 
 
-    
+
     private void Start()
     {
         playerName = PlayerPrefs.GetString("name");
         textName.text = playerName.ToString();
-        nameee.pname = playerName;
+        /*nameee.pname = playerName;*/
     }
 
     private void OnTriggerEnter(Collider other)

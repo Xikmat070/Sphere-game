@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public JoystickPlayerExample player;
-
-    public GameObject[] cube;
-    
-    public int countdownTime;
-    
-    public Text countdownDisplay;
+    [SerializeField]
+    private JoystickPlayerExample player;
+    [SerializeField]
+    private GameObject[] cube;
+    [SerializeField]
+    private int countdownTime;
+    [SerializeField]
+    private Text countdownDisplay;
 
     private void Start()
     {

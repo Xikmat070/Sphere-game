@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool PauseGame;
-    public GameObject pauseGameMenu;
+    [SerializeField]
+    private bool PauseGame;
+    [SerializeField]
+    private GameObject pauseGameMenu;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
