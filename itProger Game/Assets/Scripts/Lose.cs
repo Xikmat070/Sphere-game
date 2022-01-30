@@ -25,8 +25,8 @@ public class Lose : MonoBehaviour
 
     private void Start()
     {
-        bestcoin = PlayerPrefs.GetInt("SaveScore");
-        textbestcoin.text = bestcoin.ToString();
+        /*bestcoin = PlayerPrefs.GetInt("SaveScore");
+        textbestcoin.text = bestcoin.ToString();*/
 
 
         

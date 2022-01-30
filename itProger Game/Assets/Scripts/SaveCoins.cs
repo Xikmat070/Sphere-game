@@ -12,14 +12,14 @@ public class SaveCoins : MonoBehaviour
     private int coins;
     [SerializeField]
     private Text textcoins;
-    public PlayerData scoreee;
+    /*public PlayerData scoreee;
     public int bestcoin;
     [SerializeField]
-    private Text textbestcoin;
+    private Text textbestcoin;*/
     [SerializeField]
     private int playercoins;
-    [SerializeField]
-    private Text playerscoretext;
+    /*[SerializeField]
+    private Text playerscoretext;*/
     [SerializeField]
     private AudioSource coinAudio;
     private UnityEngine.Object coinexplosion;
@@ -27,22 +27,27 @@ public class SaveCoins : MonoBehaviour
 
 
 
-    
+
 
     private void Awake()
     {
-        
-        if (PlayerPrefs.HasKey("SaveScore"))
+        ResetScore();
+
+        /*if (PlayerPrefs.HasKey("SaveScore"))
         {
             bestcoin = PlayerPrefs.GetInt("SaveScore");
-        }
-        
+        }*/
+
     }
 
 
     private void Start()
     {
+        //PlayerPrefs.DeleteKey("coins");
+        //PlayerPrefs.DeleteKey("PlayerScore");
+
         coinexplosion = Resources.Load("CoinParticle");
+        ResetScore();
     }
 
     private void Update()
@@ -54,16 +59,18 @@ public class SaveCoins : MonoBehaviour
 
         }
 
-        BestCoin();
+        //BestCoin();
+
+        
         
 
-        if (PlayerPrefs.HasKey("coins"))
+        /*if (PlayerPrefs.HasKey("coins"))
         {
             bestcoin = PlayerPrefs.GetInt("SaveScore");
             textbestcoin.text = bestcoin.ToString();
 
 
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,7 +107,7 @@ public class SaveCoins : MonoBehaviour
 
     }
 
-    public void BestCoin()
+    /*public void BestCoin()
     {
 
         
@@ -113,7 +120,7 @@ public class SaveCoins : MonoBehaviour
         scoreee.score = bestcoin;
 
         
-    }
+    }*/
     
     
 
